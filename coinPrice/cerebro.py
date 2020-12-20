@@ -1,4 +1,4 @@
-from collection import dedupe_stuff, conn, insert_data_high_key_levels
+from collection import dedupe_stuff, conn, insert_data_key_levels
 from datetime import datetime, timedelta
 
 # conn = db_connect()
@@ -20,9 +20,12 @@ def range_identification():
     # CALLING grid_maker
     #print(range_splitter(HIGH_RANGE, LOW_RANGE))
     #print()
-    var_getting_high_key_levels = getting_high_key_levels(splitted_ranges_in_list_of_tuple(range_splitter(HIGH_RANGE,
-                                                                                                          LOW_RANGE)))
-    insert_data_high_key_levels(var_getting_high_key_levels)
+
+    #splitted_ranges_in_list_of_tuple(range_splitter(HIGH_RANGE, LOW_RANGE))
+
+    #uncomment these two lines below
+    var_getting_key_levels = getting_key_levels(splitted_ranges_in_list_of_tuple(range_splitter(HIGH_RANGE, LOW_RANGE)))
+    insert_data_key_levels(var_getting_key_levels)
 
 
 '''
@@ -34,8 +37,8 @@ def range_splitter(h, l):
     # global range_splitter_list
     range_splitter_list = []
     # num calculates how many dividers we want in the high_lowgrid
-    num = (h - l) / 100
-    print("Intervals: " + str(50))
+    num = (h - l) / 400
+    print("Intervals: " + str(5))
     print("Number to add in highs: " + str(num))
     while i <= h:
         i += num
@@ -71,29 +74,57 @@ def splitted_ranges_in_list_of_tuple(rsl):
 
 
 # '''
-def getting_high_key_levels(srlt):
+def getting_key_levels(srlt):
     cursor = conn.cursor()
-    high_key_levels_list = []
+    key_levels_list = []
     for x in range(len(srlt)):
         var = srlt[x]
         #print(var)
         cursor.execute("SELECT COUNT(high) FROM xrp_5_minutes_deduped WHERE high BETWEEN ? AND ?", (var[1], var[2]))
         results = cursor.fetchone()
+        average = (float(var[1]) + float(var[2])) / 2
+        # print(average)
         #print(results)
-        #print(str(var[0]) + " : " + str(var[1]) + " : " + str(var[2]) + " : " + str(results[0]))
-        high_key_levels_list.append((var[0], var[1], var[2], results[0]))
-    return high_key_levels_list
+        #print(str(var[0]) + " : " + str(var[1]) + " : " + str(var[2]) + " : " + str(results[0]) + " : " + str(average))
+        key_levels_list.append((var[0], var[1], var[2], results[0], average))
+
+    return key_levels_list
 
     # for row in results:
 range_identification()
 #print("Global Range Splitter List: " + str(splitted_ranges_list_of_tuple))
 
+'''
 cursor = conn.cursor()
-cursor.execute('''SELECT * 
+key_levels_list = []
+for x in range(len(splitted_ranges_list_of_tuple)):
+    var = splitted_ranges_list_of_tuple[x]
+    print(var)
+    cursor.execute("SELECT COUNT(high) FROM xrp_5_minutes_deduped WHERE high BETWEEN ? AND ?", (var[1], var[2]))
+    results = cursor.fetchone()
+    cursor.execute("SELECT COUNT(low) FROM xrp_5_minutes_deduped WHERE high BETWEEN ? AND ?", (var[1], var[2]))
+    resultss = cursor.fetchone()
+    average = (float(var[1]) + float(var[2])) / 2
+    # print(average)
+    print(str(results[0]) + " : " + str(resultss[0]))
+    # print(str(var[0]) + " : " + str(var[1]) + " : " + str(var[2]) + " : " + str(results[0]) + " : " + str(average))
+    key_levels_list.append((var[0], var[1], var[2], results[0], average))
+'''
+
+
+
+
+#'''
+cursor = conn.cursor()
+cursor.execute("""SELECT * 
                     FROM high_key_levels
-                    WHERE price_range_start like '0.5%'
-                    ORDER BY 4 DESC
-                ''')
+                    WHERE price_range_start > '0.5835'
+                    --AND high_count < 5
+                    AND high_count > 5
+                    ORDER BY 4 DESC, 2
+                    --LIMIT 10
+                """)
 results = cursor.fetchall()
 for x in results:
     print(x)
+#'''

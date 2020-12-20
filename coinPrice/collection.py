@@ -109,7 +109,7 @@ def unix_timestamp_to_date():
         print(dateNow)
     else:
         # Upgrade to for weeks prior data from today, for initialization
-        dateNow = "09 Dec, 2020"
+        dateNow = "19 Dec, 2020"
         print(dateNow)
     return dateNow
 
@@ -171,7 +171,7 @@ def dedupe_stuff():
         raise RuntimeError("Uh oh, an error occurred in dedupe_stuff Function...")
 
 
-def insert_data_high_key_levels(data):
+def insert_data_key_levels(data):
     cursor = conn.cursor()
     cursor.executescript(
         '''
@@ -180,16 +180,18 @@ def insert_data_high_key_levels(data):
                 number_of_ranges INTEGER NOT NULL,
                 price_range_start NUMERIC(6,5) NOT NULL,
                 price_range_stop NUMERIC(6,5) NOT NULL,
-                high_count INTEGER NOT NULL);
+                high_count INTEGER NOT NULL,
+                average_of_start_stop NUMERIC(6,5) NOT NULL);
                         ''')
     conn.commit()
     for x in data:
         try:
             sql = """
-               INSERT INTO high_key_levels (number_of_ranges, price_range_start, price_range_stop, high_count)
-                VALUES (?, ?, ?, ?)"""
+               INSERT INTO high_key_levels (number_of_ranges, price_range_start, price_range_stop, high_count
+                                            , average_of_start_stop)
+                VALUES (?, ?, ?, ?, ?)"""
             cursor.execute(sql,
-                           (x[0], x[1], x[2], x[3])
+                           (x[0], x[1], x[2], x[3], x[4])
                            )
             conn.commit()
         except:
@@ -218,7 +220,7 @@ close_time = datetime(close_time, 'unixepoch', 'localtime');
 '''
 cursor = conn.cursor()
 #cursor.execute("SELECT COUNT(high) FROM xrp_5_minutes_deduped WHERE high BETWEEN '0.6142599999999999' AND '0.6585199999999999'")
-cursor.execute("SELECT ROWID, * FROM xrp_5_minutes_deduped")
+cursor.execute("SELECT ROWID, * FROM xrp_5_minutes_deduped ORDER BY 1")
 results = cursor.fetchall()
 #print(results)
 for row in results:

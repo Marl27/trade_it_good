@@ -1,4 +1,9 @@
+import sys
+sys.path.insert(0,'C:/Users/himal/Desktop/trading_bot')
 import config, json, pprint
+
+print(config.API_KEY)
+
 from binance.client import Client
 from collection import insert_data, unix_timestamp_to_date, dateTomorrow
 
@@ -12,7 +17,7 @@ print("Date from unix_timestamp_to_date() "+dateFrom)
 
 
 # functionality body
-candlesticks = client.get_historical_klines('XRPUSDT', Client.KLINE_INTERVAL_5MINUTE, dateFrom, dateTo)
+candlesticks = client.get_historical_klines('XRPUSDT', Client.KLINE_INTERVAL_1MINUTE, dateFrom, dateTo)
 #json_message = json.loads(candles)
 #pprint.pprint(json_message)
 
