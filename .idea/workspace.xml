@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="062705a0-ddab-4678-9be7-f7afe713223e" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1lTvJ8eqgZTfUmYasFRgfUFhI2M" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Python" />
+  </component>
+  <component name="RunManager" selected="Python.cerebro">
+    <configuration name="bot" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="trade_it_good" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/coinPrice" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/coinPrice/bot.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="cerebro" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="trade_it_good" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/coinPrice" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/coinPrice/cerebro.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="collection" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="trade_it_good" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/coinPrice" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/coinPrice/collection.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="db_utils" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="trade_it_good" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/coinPrice" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="C:\Users\himal\Desktop\trading_bot\trade_it_good\coinPrice\db_utils.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="trade_it_good" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/coinPrice" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/coinPrice/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.cerebro" />
+        <item itemvalue="Python.test" />
+        <item itemvalue="Python.collection" />
+        <item itemvalue="Python.db_utils" />
+        <item itemvalue="Python.bot" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="showServicesTree" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="062705a0-ddab-4678-9be7-f7afe713223e" name="Default Changelist" comment="" />
+      <created>1607633820713</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1607633820713</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2368" y="167" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1607671025992">
+      <screen x="1920" y="0" width="1366" height="728" />
+    </state>
+    <state x="2368" y="167" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824/1920.0.1366.728@1920.0.1366.728" timestamp="1607671025992" />
+    <state width="1515" height="176" key="GridCell.Tab.0.bottom" timestamp="1608457243830">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1515" height="236" key="GridCell.Tab.0.bottom/0.0.1536.824/-1366.199.1366.728@0.0.1536.824" timestamp="1608399903037" />
+    <state width="1513" height="239" key="GridCell.Tab.0.bottom/0.0.1536.824/-1366.305.1366.728@0.0.1536.824" timestamp="1607781675757" />
+    <state width="1513" height="181" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1607769162246" />
+    <state width="1343" height="174" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1366.728@1920.0.1366.728" timestamp="1607764492080" />
+    <state width="1515" height="176" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.190.1366.728@0.0.1536.824" timestamp="1608457243830" />
+    <state width="1515" height="256" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.303.1366.728@0.0.1536.824" timestamp="1608385608764" />
+    <state width="1513" height="181" key="GridCell.Tab.0.bottom/0.0.1536.824/265.-768.1366.728@0.0.1536.824" timestamp="1607772736400" />
+    <state width="1515" height="497" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1608222460411" />
+    <state width="1515" height="176" key="GridCell.Tab.0.center" timestamp="1608457243830">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1515" height="236" key="GridCell.Tab.0.center/0.0.1536.824/-1366.199.1366.728@0.0.1536.824" timestamp="1608399903037" />
+    <state width="1513" height="239" key="GridCell.Tab.0.center/0.0.1536.824/-1366.305.1366.728@0.0.1536.824" timestamp="1607781675757" />
+    <state width="1513" height="181" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1607769162246" />
+    <state width="1343" height="174" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1366.728@1920.0.1366.728" timestamp="1607764492080" />
+    <state width="1515" height="176" key="GridCell.Tab.0.center/0.0.1536.824/1920.190.1366.728@0.0.1536.824" timestamp="1608457243830" />
+    <state width="1515" height="256" key="GridCell.Tab.0.center/0.0.1536.824/1920.303.1366.728@0.0.1536.824" timestamp="1608385608764" />
+    <state width="1513" height="181" key="GridCell.Tab.0.center/0.0.1536.824/265.-768.1366.728@0.0.1536.824" timestamp="1607772736392" />
+    <state width="1515" height="497" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1608222460411" />
+    <state width="1515" height="176" key="GridCell.Tab.0.left" timestamp="1608457243830">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1515" height="236" key="GridCell.Tab.0.left/0.0.1536.824/-1366.199.1366.728@0.0.1536.824" timestamp="1608399903037" />
+    <state width="1513" height="239" key="GridCell.Tab.0.left/0.0.1536.824/-1366.305.1366.728@0.0.1536.824" timestamp="1607781675757" />
+    <state width="1513" height="181" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1607769162246" />
+    <state width="1343" height="174" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1366.728@1920.0.1366.728" timestamp="1607764492080" />
+    <state width="1515" height="176" key="GridCell.Tab.0.left/0.0.1536.824/1920.190.1366.728@0.0.1536.824" timestamp="1608457243830" />
+    <state width="1515" height="256" key="GridCell.Tab.0.left/0.0.1536.824/1920.303.1366.728@0.0.1536.824" timestamp="1608385608763" />
+    <state width="1513" height="181" key="GridCell.Tab.0.left/0.0.1536.824/265.-768.1366.728@0.0.1536.824" timestamp="1607772736392" />
+    <state width="1515" height="497" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1608222460411" />
+    <state width="1515" height="176" key="GridCell.Tab.0.right" timestamp="1608457243830">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1515" height="236" key="GridCell.Tab.0.right/0.0.1536.824/-1366.199.1366.728@0.0.1536.824" timestamp="1608399903037" />
+    <state width="1513" height="239" key="GridCell.Tab.0.right/0.0.1536.824/-1366.305.1366.728@0.0.1536.824" timestamp="1607781675757" />
+    <state width="1513" height="181" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1607769162246" />
+    <state width="1343" height="174" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1366.728@1920.0.1366.728" timestamp="1607764492080" />
+    <state width="1515" height="176" key="GridCell.Tab.0.right/0.0.1536.824/1920.190.1366.728@0.0.1536.824" timestamp="1608457243830" />
+    <state width="1515" height="256" key="GridCell.Tab.0.right/0.0.1536.824/1920.303.1366.728@0.0.1536.824" timestamp="1608385608764" />
+    <state width="1513" height="181" key="GridCell.Tab.0.right/0.0.1536.824/265.-768.1366.728@0.0.1536.824" timestamp="1607772736392" />
+    <state width="1515" height="497" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1608222460411" />
+    <state x="275" y="12" key="SettingsEditor" timestamp="1608371134369">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="276" y="54" key="SettingsEditor/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1607634042130" />
+    <state x="2165" y="11" key="SettingsEditor/0.0.1536.824/1920.0.1366.728@1920.0.1366.728" timestamp="1607635322497" />
+    <state x="275" y="12" key="SettingsEditor/0.0.1536.824/1920.303.1366.728@0.0.1536.824" timestamp="1608371134369" />
+    <state x="275" y="12" key="SettingsEditor/0.0.1536.824/265.-768.1366.728@0.0.1536.824" timestamp="1607769495683" />
+    <state x="477" y="240" key="com.intellij.ide.util.TipDialog" timestamp="1608221556871">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="477" y="240" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1608221556871" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1607753075919">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1607753075919" />
+  </component>
+</project>
