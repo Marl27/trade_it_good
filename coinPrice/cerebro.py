@@ -91,7 +91,7 @@ range_identification()
 cursor = conn.cursor()
 cursor.execute('''SELECT * 
                     FROM high_key_levels
-                    WHERE price_range_start like '0.57%'
+                    WHERE price_range_start like '0.5%'
                     ORDER BY 4 DESC
                 ''')
 results = cursor.fetchall()
