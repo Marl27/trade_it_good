@@ -118,7 +118,7 @@ for x in range(len(splitted_ranges_list_of_tuple)):
 
 
 
-#'''
+'''
 cursor = conn.cursor()
 cursor.execute("""SELECT * --MIN(average_of_start_stop) 
                     FROM high_key_levels
@@ -131,4 +131,4 @@ cursor.execute("""SELECT * --MIN(average_of_start_stop)
 results = cursor.fetchall()
 for x in results:
     print(x)
-#'''
+'''
