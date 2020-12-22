@@ -8,8 +8,9 @@ candle_data = dedupe_stuff()
 def range_identification():
     cursor = conn.cursor()
     cursor.execute("""
+                WITH CTE AS(SELECT open_time, high, low FROM xrp_5_minutes_deduped ORDER BY 1 DESC LIMIT 700)
                 SELECT MAX(high),  MIN(low)
-                FROM xrp_5_minutes_deduped
+                FROM CTE
                 """)
 
     results = cursor.fetchall()
@@ -37,8 +38,8 @@ def range_splitter(h, l):
     # global range_splitter_list
     range_splitter_list = []
     # num calculates how many dividers we want in the high_lowgrid
-    num = (h - l) / 400
-    print("Intervals: " + str(5))
+    num = (h - l) / 50
+    print("Intervals: " + str(20))
     print("Number to add in highs: " + str(num))
     while i <= h:
         i += num
@@ -56,8 +57,6 @@ def range_splitter(h, l):
 def splitted_ranges_in_list_of_tuple(rsl):
 adds range_splitter_list in a list of tuples. So that it could be easily used in a query
 '''
-
-
 def splitted_ranges_in_list_of_tuple(rsl):
     #global splitted_ranges_list_of_tuple
     splitted_ranges_list_of_tuple = []
@@ -81,12 +80,15 @@ def getting_key_levels(srlt):
         var = srlt[x]
         #print(var)
         cursor.execute("SELECT COUNT(high) FROM xrp_5_minutes_deduped WHERE high BETWEEN ? AND ?", (var[1], var[2]))
-        results = cursor.fetchone()
+        high = cursor.fetchone()
+        cursor.execute("SELECT COUNT(high) FROM xrp_5_minutes_deduped WHERE low BETWEEN ? AND ?", (var[1], var[2]))
+        low = cursor.fetchone()
+        key_level = high[0] + low[0]
         average = (float(var[1]) + float(var[2])) / 2
         # print(average)
         #print(results)
         #print(str(var[0]) + " : " + str(var[1]) + " : " + str(var[2]) + " : " + str(results[0]) + " : " + str(average))
-        key_levels_list.append((var[0], var[1], var[2], results[0], average))
+        key_levels_list.append((var[0], var[1], var[2], key_level, average))
 
     return key_levels_list
 
@@ -101,14 +103,16 @@ for x in range(len(splitted_ranges_list_of_tuple)):
     var = splitted_ranges_list_of_tuple[x]
     print(var)
     cursor.execute("SELECT COUNT(high) FROM xrp_5_minutes_deduped WHERE high BETWEEN ? AND ?", (var[1], var[2]))
-    results = cursor.fetchone()
-    cursor.execute("SELECT COUNT(low) FROM xrp_5_minutes_deduped WHERE high BETWEEN ? AND ?", (var[1], var[2]))
-    resultss = cursor.fetchone()
+    high = cursor.fetchone()
+    cursor.execute("SELECT COUNT(high) FROM xrp_5_minutes_deduped WHERE low BETWEEN ? AND ?", (var[1], var[2]))
+    low = cursor.fetchone()
+    key_level = high[0] + low[0]
     average = (float(var[1]) + float(var[2])) / 2
     # print(average)
-    print(str(results[0]) + " : " + str(resultss[0]))
-    # print(str(var[0]) + " : " + str(var[1]) + " : " + str(var[2]) + " : " + str(results[0]) + " : " + str(average))
-    key_levels_list.append((var[0], var[1], var[2], results[0], average))
+    print(str(high[0]) + " : " + str(low[0]))
+    print(str(var[0]) + " : " + str(var[1]) + " : " + str(var[2]) + " : " + str(high[0]) + " : " + str(low[0]) + " : "
+          + str(average))
+    key_levels_list.append((var[0], var[1], var[2], key_level, average))
 '''
 
 
@@ -116,13 +120,13 @@ for x in range(len(splitted_ranges_list_of_tuple)):
 
 #'''
 cursor = conn.cursor()
-cursor.execute("""SELECT * 
+cursor.execute("""SELECT * --MIN(average_of_start_stop) 
                     FROM high_key_levels
-                    WHERE price_range_start > '0.5835'
-                    --AND high_count < 5
-                    AND high_count > 5
-                    ORDER BY 4 DESC, 2
-                    --LIMIT 10
+                    WHERE average_of_start_stop > '0.5530'
+                    AND high_count < 9
+                    AND high_count > 0
+                    ORDER BY high_count DESC, price_range_start
+                    --LIMIT 1
                 """)
 results = cursor.fetchall()
 for x in results:

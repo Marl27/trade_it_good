@@ -109,7 +109,7 @@ def unix_timestamp_to_date():
         print(dateNow)
     else:
         # Upgrade to for weeks prior data from today, for initialization
-        dateNow = "19 Dec, 2020"
+        dateNow = "14 Dec, 2020"
         print(dateNow)
     return dateNow
 
@@ -216,11 +216,19 @@ close_time = datetime(close_time, 'unixepoch', 'localtime');
 # cursor = conn.cursor()
 # create_table()
 # ***************************************************************************
-# open_time, open, high, low, close, volume, close_time,
+# open_time, open, high, low, close, volume, close_time, 0.5469
 '''
 cursor = conn.cursor()
 #cursor.execute("SELECT COUNT(high) FROM xrp_5_minutes_deduped WHERE high BETWEEN '0.6142599999999999' AND '0.6585199999999999'")
-cursor.execute("SELECT ROWID, * FROM xrp_5_minutes_deduped ORDER BY 1")
+cursor.execute("""
+                WITH CTE AS(SELECT open_time, high, low, open, close 
+                            FROM xrp_5_minutes_deduped ORDER BY 1 DESC LIMIT 70)
+                    --, HIGH_LOW AS ('0.54700'low_check, '0.55012' high)
+                SELECT COUNT(*) --COUNT(low) 
+                FROM CTE WHERE high BETWEEN '0.54200' AND '0.55312'
+                
+                """)
+
 results = cursor.fetchall()
 #print(results)
 for row in results:

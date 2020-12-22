@@ -17,7 +17,7 @@ print("Date from unix_timestamp_to_date() "+dateFrom)
 
 
 # functionality body
-candlesticks = client.get_historical_klines('XRPUSDT', Client.KLINE_INTERVAL_1MINUTE, dateFrom, dateTo)
+candlesticks = client.get_historical_klines('XRPUSDT', Client.KLINE_INTERVAL_15MINUTE, dateFrom, dateTo)
 #json_message = json.loads(candles)
 #pprint.pprint(json_message)
 
