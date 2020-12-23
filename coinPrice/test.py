@@ -1,13 +1,11 @@
 import sys
 sys.path.insert(0,'C:/Users/himal/Desktop/trading_bot')
-import config, json, pprint
+import config
 
 print(config.API_KEY)
 
 from binance.client import Client
 from collection import insert_data, unix_timestamp_to_date, dateTomorrow
-
-from binance.enums import *
 
 # Variables
 client = Client(config.API_KEY, config.API_SECRET) #, tld='us')

@@ -1,5 +1,4 @@
 from collection import dedupe_stuff, conn, insert_data_key_levels
-from datetime import datetime, timedelta
 
 # conn = db_connect()
 candle_data = dedupe_stuff()
