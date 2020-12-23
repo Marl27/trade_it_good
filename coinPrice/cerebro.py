@@ -1,6 +1,7 @@
-from collection import dedupe_stuff, conn, insert_data_key_levels
+from coinPrice.collection import dedupe_stuff, conn, insert_data_key_levels
 
 # conn = db_connect()
+
 candle_data = dedupe_stuff()
 
 
