@@ -1,4 +1,4 @@
-import websocket, json, pprint, talib, numpy
+import websocket, json, pprint
 # websocket-client
 # python-binance
 import config
