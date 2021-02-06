@@ -1,6 +1,6 @@
 import pytest
 
-from coinPrice.cerebro import range_splitter, splitted_ranges_in_list_of_tuple
+from coinPrice.cerebro import range_splitter, splitted_ranges_in_list_of_tuple #, adding_numbers
 
 
 def test_range_splitter():
@@ -23,3 +23,12 @@ def test_range_splitter_fails():
 def test_splitted_ranges_in_list_of_tuple(rsl, expected):
     """this is a parametrized test that tests many values"""
     assert splitted_ranges_in_list_of_tuple(rsl) == expected
+
+'''
+@pytest.mark.parametrize(
+    "a,b, expected",
+    [(1, 2, 3), (-10, 10, 0)],
+)
+def test_adding_numbers(a, b, expected):
+    assert adding_numbers(a, b) == expected
+'''

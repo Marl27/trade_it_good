@@ -1,3 +1,5 @@
+import sys
+sys.path.insert(0,'C:/Users/himal/Desktop/trading_bot')
 import websocket, json, pprint
 # websocket-client
 # python-binance
@@ -5,7 +7,7 @@ import config
 from binance.client import Client
 from binance.enums import *
 
-SOCKET = "wss://stream.binance.com:9443/ws/xrpusdt@kline_5m"
+SOCKET = "wss://stream.binance.com:9443/ws/xrpusdt@kline_1m"
 
 RSI_PERIOD = 14
 RSI_OVERBOUGHT = 70

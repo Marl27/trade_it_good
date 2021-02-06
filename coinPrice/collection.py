@@ -109,7 +109,7 @@ def unix_timestamp_to_date():
         print(dateNow)
     else:
         # Upgrade to for weeks prior data from today, for initialization
-        dateNow = "14 Dec, 2020"
+        dateNow = "15 Jan, 2021"
         print(dateNow)
     return dateNow
 
@@ -134,10 +134,10 @@ def dedupe_stuff():
             DROP TABLE IF EXISTS xrp_5_minutes_deduped;
             CREATE TABLE xrp_5_minutes_deduped ( 
                             open_time TEXT,
-                            open TEXT,
-                            high TEXT,
-                            low TEXT,
-                            close TEXT,
+                            open NUMERIC(18,9),
+                            high NUMERIC(18,9),
+                            low NUMERIC(18,9),
+                            close NUMERIC(18,9),
                             volume TEXT,
                             close_time TEXT,
                             quote_asset_volume TEXT,
@@ -212,7 +212,7 @@ close_time = datetime(close_time, 'unixepoch', 'localtime');
 # dateTomorrow()
 # unix_timestamp_to_date()
 
-# dedupe_stuff()
+dedupe_stuff()
 # cursor = conn.cursor()
 # create_table()
 # ***************************************************************************
@@ -221,12 +221,10 @@ close_time = datetime(close_time, 'unixepoch', 'localtime');
 cursor = conn.cursor()
 #cursor.execute("SELECT COUNT(high) FROM xrp_5_minutes_deduped WHERE high BETWEEN '0.6142599999999999' AND '0.6585199999999999'")
 cursor.execute("""
-                WITH CTE AS(SELECT open_time, high, low, open, close 
-                            FROM xrp_5_minutes_deduped ORDER BY 1 DESC LIMIT 70)
-                    --, HIGH_LOW AS ('0.54700'low_check, '0.55012' high)
-                SELECT COUNT(*) --COUNT(low) 
-                FROM CTE WHERE high BETWEEN '0.54200' AND '0.55312'
-                
+                SELECT open_time, high, low, open, close
+                            FROM xrp_5_minutes_deduped 
+                            ORDER BY 1 DESC 
+                            LIMIT 70
                 """)
 
 results = cursor.fetchall()
@@ -255,4 +253,25 @@ try:
 except ValueError:
     correctDate = False
 print(str(correctDate))
+'''
+#########################################################################################
+'''
+cursor = conn.cursor()
+cursor.execute("""
+               WITH CTE AS(SELECT open_time, high, low, ((high - low)/low)*100 AS avg_len 
+                   FROM xrp_5_minutes_deduped 
+                   ORDER BY 1 DESC 
+                   LIMIT 100
+                   )
+               SELECT * --MAX(high),  MIN(low), AVG(high), AVG(low), AVG(avg_len)
+               , (SELECT close  
+                   FROM xrp_5_minutes_deduped
+                   ORDER BY open_time DESC
+                   LIMIT 1
+               ) 
+               FROM CTE
+               """)
+
+results = cursor.fetchall()
+print(results)
 '''
