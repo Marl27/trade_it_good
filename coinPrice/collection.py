@@ -40,6 +40,10 @@ def create_table():
         raise RuntimeError("Uh oh, an error occurred while Creating tables...")
 
 
+
+
+
+
 def insert_data(data):
     cursor = conn.cursor()
 
