@@ -10,7 +10,7 @@ def create_table():
     #### Notice the use of the ROWID
     try:
         cursor.executescript(
-            '''
+            """
             CREATE TABLE IF NOT EXISTS xrp_5_minutes ( 
                     open_time TEXT,
                     open TEXT,
@@ -31,7 +31,8 @@ def create_table():
                     price_range_start NUMERIC(6,5) NOT NULL,
                     price_range_stop NUMERIC(6,5) NOT NULL,
                     high_count INTEGER NOT NULL);
-                            ''')
+                            """
+        )
         print(conn.total_changes)
         conn.commit()
     except:
@@ -50,9 +51,23 @@ def insert_data(data):
            INSERT INTO xrp_5_minutes (open_time, open, high, low, close, volume, close_time, quote_asset_volume, 
            number_of_trades, taker_buy_base_asset_volume, taker_buy_quote_asset_volume, ignore)
            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"""
-        cursor.execute(sql,
-                       (data[0] / 1000, data[1], data[2], data[3], data[4], data[5], data[6] / 1000, data[7], data[8],
-                        data[9], data[10], data[11]))
+        cursor.execute(
+            sql,
+            (
+                data[0] / 1000,
+                data[1],
+                data[2],
+                data[3],
+                data[4],
+                data[5],
+                data[6] / 1000,
+                data[7],
+                data[8],
+                data[9],
+                data[10],
+                data[11],
+            ),
+        )
         conn.commit()
     except:
         conn.rollback()
@@ -80,8 +95,23 @@ def update_data(data):
                 taker_buy_quote_asset_volume = ?,
                 ignore = ?
             WHERE open_time = ?"""
-        cursor.execute(sql, (data[1], data[2], data[3], data[4], data[5], data[6] / 1000, data[7], data[8],
-                             data[9], data[10], data[11]), data[0] / 1000)
+        cursor.execute(
+            sql,
+            (
+                data[1],
+                data[2],
+                data[3],
+                data[4],
+                data[5],
+                data[6] / 1000,
+                data[7],
+                data[8],
+                data[9],
+                data[10],
+                data[11],
+            ),
+            data[0] / 1000,
+        )
         conn.commit()
     except:
         conn.rollback()
@@ -105,7 +135,7 @@ def unix_timestamp_to_date():
         print(ts)
         # if you encounter a "year is out of range" error the timestamp
         # may be in milliseconds, try `ts /= 1000` in that case
-        dateNow = datetime.utcfromtimestamp(ts).strftime('%d %b, %Y')
+        dateNow = datetime.utcfromtimestamp(ts).strftime("%d %b, %Y")
         print(dateNow)
     else:
         # Upgrade to for weeks prior data from today, for initialization
@@ -163,7 +193,8 @@ def dedupe_stuff():
             SET
                 open_time = datetime(open_time, 'unixepoch', 'localtime'),
                 close_time = datetime(close_time, 'unixepoch', 'localtime');
-            """)
+            """
+        )
         conn.commit()
         # print("1")
     except:
@@ -174,7 +205,7 @@ def dedupe_stuff():
 def insert_data_key_levels(data):
     cursor = conn.cursor()
     cursor.executescript(
-        '''
+        """
         DROP TABLE IF EXISTS high_key_levels;
         CREATE TABLE high_key_levels(
                 number_of_ranges INTEGER NOT NULL,
@@ -182,7 +213,8 @@ def insert_data_key_levels(data):
                 price_range_stop NUMERIC(6,5) NOT NULL,
                 high_count INTEGER NOT NULL,
                 average_of_start_stop NUMERIC(6,5) NOT NULL);
-                        ''')
+                        """
+    )
     conn.commit()
     for x in data:
         try:
@@ -190,9 +222,7 @@ def insert_data_key_levels(data):
                INSERT INTO high_key_levels (number_of_ranges, price_range_start, price_range_stop, high_count
                                             , average_of_start_stop)
                 VALUES (?, ?, ?, ?, ?)"""
-            cursor.execute(sql,
-                           (x[0], x[1], x[2], x[3], x[4])
-                           )
+            cursor.execute(sql, (x[0], x[1], x[2], x[3], x[4]))
             conn.commit()
         except:
             conn.rollback()
@@ -201,13 +231,13 @@ def insert_data_key_levels(data):
     return cursor.lastrowid
 
 
-'''
+"""
 UPDATE
 xrp_5_minutes
 SET
 open_time = datetime(open_time, 'unixepoch', 'localtime'),
 close_time = datetime(close_time, 'unixepoch', 'localtime');
-'''
+"""
 
 # dateTomorrow()
 # unix_timestamp_to_date()
@@ -217,21 +247,27 @@ dedupe_stuff()
 # create_table()
 # ***************************************************************************
 # open_time, open, high, low, close, volume, close_time, 0.5469
-'''
-cursor = conn.cursor()
-#cursor.execute("SELECT COUNT(high) FROM xrp_5_minutes_deduped WHERE high BETWEEN '0.6142599999999999' AND '0.6585199999999999'")
-cursor.execute("""
-                SELECT open_time, high, low, open, close
-                            FROM xrp_5_minutes_deduped 
-                            ORDER BY 1 DESC 
-                            LIMIT 70
-                """)
+#'''
+def return_xrp_dedupe():
+    cursor = conn.cursor()
+    # cursor.execute("SELECT COUNT(high) FROM xrp_5_minutes_deduped WHERE high BETWEEN '0.6142599999999999' AND '0.6585199999999999'")
+    cursor.execute(
+        """
+                    SELECT open_time, high, low, open, close
+                                FROM xrp_5_minutes_deduped 
+                                ORDER BY 1 DESC 
+                                LIMIT 70
+                    """
+    )
 
-results = cursor.fetchall()
-#print(results)
-for row in results:
-    print(row)
-'''
+    results = cursor.fetchall()
+    # print(results)
+    # for row in results:
+    #   print(row)
+    return results
+
+
+#'''
 # ***************************************************************************
 '''
 # region if tables exists
@@ -244,7 +280,7 @@ for row in results:
     print(row)
 '''
 # ***************************************************************************
-'''
+"""
 correctDate = None
 try:
     unixts = int("12345672345.0")
@@ -253,7 +289,7 @@ try:
 except ValueError:
     correctDate = False
 print(str(correctDate))
-'''
+"""
 #########################################################################################
 '''
 cursor = conn.cursor()

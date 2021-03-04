@@ -3,12 +3,14 @@ from coinPrice.collection import dedupe_stuff, conn, insert_data_key_levels
 # conn = db_connect()
 
 candle_data = dedupe_stuff()
-'''subtract the old price from the new price and divide the difference by the old price. 
-    Then, multiply by 100 to get the percent change'''
+"""subtract the old price from the new price and divide the difference by the old price. 
+    Then, multiply by 100 to get the percent change"""
+
 
 def range_identification():
     cursor = conn.cursor()
-    cursor.execute("""
+    cursor.execute(
+        """
                 WITH CTE AS(SELECT open_time, high, low, ((high - low)/low)*100 AS avg_len 
                     FROM xrp_5_minutes_deduped 
                     ORDER BY 1 DESC 
@@ -21,10 +23,11 @@ def range_identification():
                     LIMIT 1
                 ) 
                 FROM CTE
-                """)
+                """
+    )
 
     results = cursor.fetchall()
-    #print(results)
+    # print(results)
     HIGH_RANGE = float(results[0][0])
     LOW_RANGE = float(results[0][1])
     AVG_HIGH = float(results[0][2])
@@ -41,17 +44,19 @@ def range_identification():
     CURRENT_PRICE = str(results[0][5])
     print("CURRENT_PRICE: " + str(CURRENT_PRICE))
 
-    #for row in results:
+    # for row in results:
     #    print(row)
     # CALLING grid_maker
-    #print(range_splitter(HIGH_RANGE, LOW_RANGE))
-    #print()
+    # print(range_splitter(HIGH_RANGE, LOW_RANGE))
+    # print()
 
-    #splitted_ranges_in_list_of_tuple(range_splitter(HIGH_RANGE, LOW_RANGE))
+    # splitted_ranges_in_list_of_tuple(range_splitter(HIGH_RANGE, LOW_RANGE))
 
-    #uncomment these two lines below
-    var_getting_key_levels = getting_key_levels(splitted_ranges_in_list_of_tuple(range_splitter(HIGH_RANGE, LOW_RANGE)))
-    #print("getting KEy LEvels: " + str(var_getting_key_levels))
+    # uncomment these two lines below
+    var_getting_key_levels = getting_key_levels(
+        splitted_ranges_in_list_of_tuple(range_splitter(HIGH_RANGE, LOW_RANGE))
+    )
+    # print("getting KEy LEvels: " + str(var_getting_key_levels))
     insert_data_key_levels(var_getting_key_levels)
 
 
@@ -67,13 +72,13 @@ def range_splitter(h, l):
     range_splitter_list = []
     # num calculates how many dividers we want in the high_lowgrid
     intervals = 100
-    num = (h - l) / intervals  #list(range(10, 30, 2))
+    num = (h - l) / intervals  # list(range(10, 30, 2))
     print("Intervals: " + " " + str(intervals))
     print("Number to add in highs: " + str(num))
     while i <= h:
         i += num
         range_splitter_list.append(i)
-    #print("i: " + str(i))
+    # print("i: " + str(i))
     if i > l:
         range_splitter_list.remove(i)
         # print(i)
@@ -82,12 +87,14 @@ def range_splitter(h, l):
     return range_splitter_list
 
 
-'''
+"""
 def splitted_ranges_in_list_of_tuple(rsl):
 adds range_splitter_list in a list of tuples. So that it could be easily used in a query
-'''
+"""
+
+
 def splitted_ranges_in_list_of_tuple(rsl):
-    #global splitted_ranges_list_of_tuple
+    # global splitted_ranges_list_of_tuple
     splitted_ranges_list_of_tuple = []
     i = 0
     # for i in range(len(range_splitter_list)):
@@ -95,9 +102,9 @@ def splitted_ranges_in_list_of_tuple(rsl):
         # if i == len(range_splitter_list)-1:
         #   break
         splitted_ranges_list_of_tuple.append((i, rsl[i], rsl[i + 1]))
-        #print("inside LOOP: " + str(splitted_ranges_list_of_tuple))
+        # print("inside LOOP: " + str(splitted_ranges_list_of_tuple))
         i += 1
-    #print("outside LOOP: " + str(splitted_ranges_list_of_tuple))
+    # print("outside LOOP: " + str(splitted_ranges_list_of_tuple))
     return splitted_ranges_list_of_tuple
 
 
@@ -107,31 +114,38 @@ def getting_key_levels(srlt):
     key_levels_list = []
     for x in range(len(srlt)):
         var = srlt[x]
-        #print(var)
-        cursor.execute("SELECT COUNT(high) FROM xrp_5_minutes_deduped WHERE high BETWEEN ? AND ?", (var[1], var[2]))
+        # print(var)
+        cursor.execute(
+            "SELECT COUNT(high) FROM xrp_5_minutes_deduped WHERE high BETWEEN ? AND ?",
+            (var[1], var[2]),
+        )
         high = cursor.fetchone()
-        cursor.execute("SELECT COUNT(high) FROM xrp_5_minutes_deduped WHERE low BETWEEN ? AND ?", (var[1], var[2]))
+        cursor.execute(
+            "SELECT COUNT(high) FROM xrp_5_minutes_deduped WHERE low BETWEEN ? AND ?",
+            (var[1], var[2]),
+        )
         low = cursor.fetchone()
-        #print("high: " + str(high[0]))
-        #print("low: " + str(low[0]))
+        # print("high: " + str(high[0]))
+        # print("low: " + str(low[0]))
         key_level = high[0] + low[0]
         average = (float(var[1]) + float(var[2])) / 2
         # print(average)
-        #print(results)
-        #print(str(var[0]) + " : " + str(var[1]) + " : " + str(var[2]) + " : " + str(results[0]) + " : " + str(average))
+        # print(results)
+        # print(str(var[0]) + " : " + str(var[1]) + " : " + str(var[2]) + " : " + str(results[0]) + " : " + str(average))
         key_levels_list.append((var[0], var[1], var[2], key_level, average))
-        #key_levels_list.append((var[0], var[1], var[2], low[0], average))
+        # key_levels_list.append((var[0], var[1], var[2], low[0], average))
     return key_levels_list
 
-'''
+
+"""
 def adding_numbers(a, b):
     return a+b
-'''
-    # for row in results:
+"""
+# for row in results:
 range_identification()
-#print("Global Range Splitter List: " + str(splitted_ranges_list_of_tuple))
+# print("Global Range Splitter List: " + str(splitted_ranges_list_of_tuple))
 
-'''is_trade_profitable'''
+"""is_trade_profitable"""
 # broker fee - 0.1000% of the trade
 
 
