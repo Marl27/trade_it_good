@@ -1,6 +1,6 @@
 import sys
 
-sys.path.insert(0, "C:/Users/himal/Desktop/trading_bot")
+sys.path.insert(0, "C:/Users/Golu/Desktop/Stuff/Personal")
 import config
 
 print(config.API_KEY)
