@@ -14,7 +14,7 @@ def range_identification():
                 WITH CTE AS(SELECT open_time, high, low, ((high - low)/low)*100 AS avg_len 
                     FROM xrp_5_minutes_deduped 
                     ORDER BY 1 DESC 
-                    LIMIT 700
+                    LIMIT 2500
                     )
                 SELECT MAX(high),  MIN(low), AVG(high), AVG(low), AVG(avg_len)
                 , (SELECT close  
@@ -71,7 +71,7 @@ def range_splitter(h, l):
     # global range_splitter_list
     range_splitter_list = []
     # num calculates how many dividers we want in the high_lowgrid
-    intervals = 100
+    intervals = 25
     num = (h - l) / intervals  # list(range(10, 30, 2))
     print("Intervals: " + " " + str(intervals))
     print("Number to add in highs: " + str(num))
@@ -129,8 +129,8 @@ def getting_key_levels(srlt):
         # print("low: " + str(low[0]))
         key_level = high[0] + low[0]
         average = (float(var[1]) + float(var[2])) / 2
+        """average = Average price of the candle to make 'KEY_LEVEL'/SUPPORT/RESISTANCE"""
         # print(average)
-        # print(results)
         # print(str(var[0]) + " : " + str(var[1]) + " : " + str(var[2]) + " : " + str(results[0]) + " : " + str(average))
         key_levels_list.append((var[0], var[1], var[2], key_level, average))
         # key_levels_list.append((var[0], var[1], var[2], low[0], average))
@@ -141,21 +141,22 @@ def getting_key_levels(srlt):
 def adding_numbers(a, b):
     return a+b
 """
-# for row in results:
 range_identification()
+print("************************************************************")
+
+# for row in results:
 # print("Global Range Splitter List: " + str(splitted_ranges_list_of_tuple))
 
 """is_trade_profitable"""
 # broker fee - 0.1000% of the trade
 
-
-#'''
+'''
 cursor = conn.cursor()
 
 sql = """SELECT *  , ((average_of_start_stop - ?)/?)*100 AS percentage_diff_from_current_price
             FROM high_key_levels
-            WHERE average_of_start_stop > ? 
-            --AND high_count <= 9
+            WHERE average_of_start_stop >= ? 
+            AND high_count <= 9
             AND high_count > 0
             AND percentage_diff_from_current_price >= 0.5
             ORDER BY high_count DESC, price_range_start
@@ -165,4 +166,4 @@ cursor.execute(sql, (CURRENT_PRICE, CURRENT_PRICE, CURRENT_PRICE))
 results = cursor.fetchall()
 for x in results:
     print("ROWs: " + str(x))
-#'''
+'''

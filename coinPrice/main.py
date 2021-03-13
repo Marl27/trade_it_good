@@ -16,14 +16,14 @@ from coinPrice.collection import (
 
 # Variables
 client = Client(config.API_KEY, config.API_SECRET)  # , tld='us')
-dateFrom = unix_timestamp_to_date()
+dateFrom = unix_timestamp_to_date("08 Mar, 2021")
 dateTo = dateTomorrow()
 print("Date from unix_timestamp_to_date() " + dateFrom)
 
 
 # functionality body
 candlesticks = client.get_historical_klines(
-    "BTCUSDT", Client.KLINE_INTERVAL_5MINUTE, dateFrom, dateTo
+    "XRPUSDT", Client.KLINE_INTERVAL_5MINUTE, dateFrom, dateTo
 )
 # json_message = json.loads(candles)
 # pprint.pprint(json_message)
@@ -41,5 +41,5 @@ for candlestick in candlesticks:
     )
     # print(candlestick)
 
-
-candle_data = dedupe_stuff()
+# candle_data = dedupe_stuff()
+from coinPrice.key_level_finder import *

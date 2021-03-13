@@ -1,6 +1,6 @@
 import pytest
 
-from coinPrice.cerebro import range_splitter, splitted_ranges_in_list_of_tuple #, adding_numbers
+from coinPrice.key_level_finder import range_splitter, splitted_ranges_in_list_of_tuple #, adding_numbers
 
 
 def test_range_splitter():

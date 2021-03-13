@@ -40,10 +40,6 @@ def create_table():
         raise RuntimeError("Uh oh, an error occurred while Creating tables...")
 
 
-
-
-
-
 def insert_data(data):
     cursor = conn.cursor()
 
@@ -124,7 +120,7 @@ def update_data(data):
     return cursor.lastrowid
 
 
-def unix_timestamp_to_date():
+def unix_timestamp_to_date(date_param):
     create_table()
     cursor = conn.cursor()
     cursor.execute("SELECT MAX(open_time) FROM xrp_5_minutes")
@@ -143,7 +139,7 @@ def unix_timestamp_to_date():
         print(dateNow)
     else:
         # Upgrade to for weeks prior data from today, for initialization
-        dateNow = "15 Jan, 2021"
+        dateNow = date_param
         print(dateNow)
     return dateNow
 
@@ -246,12 +242,12 @@ close_time = datetime(close_time, 'unixepoch', 'localtime');
 # dateTomorrow()
 # unix_timestamp_to_date()
 
-dedupe_stuff()
+# dedupe_stuff()
 # cursor = conn.cursor()
 # create_table()
 # ***************************************************************************
 # open_time, open, high, low, close, volume, close_time, 0.5469
-#'''
+'''
 def return_xrp_dedupe():
     cursor = conn.cursor()
     # cursor.execute("SELECT COUNT(high) FROM xrp_5_minutes_deduped WHERE high BETWEEN '0.6142599999999999' AND '0.6585199999999999'")
@@ -271,7 +267,7 @@ def return_xrp_dedupe():
     return results
 
 
-#'''
+'''
 # ***************************************************************************
 '''
 # region if tables exists
