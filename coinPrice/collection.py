@@ -294,7 +294,8 @@ print(str(correctDate))
 '''
 cursor = conn.cursor()
 cursor.execute("""
-               WITH CTE AS(SELECT open_time, high, low, ((high - low)/low)*100 AS avg_len 
+               WITH CTE AS(
+               SELECT open_time, high, low, ((high - low)/low)*100 AS avg_len 
                    FROM xrp_5_minutes_deduped 
                    ORDER BY 1 DESC 
                    LIMIT 100

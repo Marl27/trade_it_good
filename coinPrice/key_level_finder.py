@@ -14,7 +14,7 @@ def range_identification():
                 WITH CTE AS(SELECT open_time, high, low, ((high - low)/low)*100 AS avg_len 
                     FROM xrp_5_minutes_deduped 
                     ORDER BY 1 DESC 
-                    LIMIT 2500
+                    --LIMIT 600
                     )
                 SELECT MAX(high),  MIN(low), AVG(high), AVG(low), AVG(avg_len)
                 , (SELECT close  
@@ -71,7 +71,7 @@ def range_splitter(h, l):
     # global range_splitter_list
     range_splitter_list = []
     # num calculates how many dividers we want in the high_lowgrid
-    intervals = 25
+    intervals = 200
     num = (h - l) / intervals  # list(range(10, 30, 2))
     print("Intervals: " + " " + str(intervals))
     print("Number to add in highs: " + str(num))
@@ -105,7 +105,9 @@ def splitted_ranges_in_list_of_tuple(rsl):
         # print("inside LOOP: " + str(splitted_ranges_list_of_tuple))
         i += 1
     # print("outside LOOP: " + str(splitted_ranges_list_of_tuple))
+    #print(splitted_ranges_list_of_tuple)
     return splitted_ranges_list_of_tuple
+
 
 
 # '''
@@ -121,7 +123,7 @@ def getting_key_levels(srlt):
         )
         high = cursor.fetchone()
         cursor.execute(
-            "SELECT COUNT(high) FROM xrp_5_minutes_deduped WHERE low BETWEEN ? AND ?",
+            "SELECT COUNT(low) FROM xrp_5_minutes_deduped WHERE low BETWEEN ? AND ?",
             (var[1], var[2]),
         )
         low = cursor.fetchone()
@@ -149,6 +151,31 @@ print("************************************************************")
 
 """is_trade_profitable"""
 # broker fee - 0.1000% of the trade
+
+'''
+
+cursor = conn.cursor()
+sql = """
+        With Current_price_getter AS (SELECT "close" AS current_price
+                    FROM xrp_5_minutes_deduped
+                    ORDER BY open_time DESC 
+                    LIMIT 1)
+               SELECT kl.number_of_ranges, kl.price_range_start, kl.price_range_stop, kl.high_count
+                    , kl.average_of_start_stop, cpg.current_price
+                    --, ((price_range_stop - price_range_start)/price_range_start)*100 AS percentage_diff_from_current_price
+                FROM Current_price_getter cpg, high_key_levels kl
+                WHERE average_of_start_stop < cpg.current_price
+                    AND kl.high_count > (SELECT AVG(high_count) FROM high_key_levels)  --(average count of high_count from high_key_levels)
+                    ORDER BY  kl.price_range_start DESC , kl.high_count DESC --
+                    LIMIT 5
+        """
+cursor.execute(sql)
+results = cursor.fetchall()
+keys = [(x[4],x[5]) for x in results]
+#for x in results:
+print("ROWs: " + str(keys))
+'''
+
 
 '''
 cursor = conn.cursor()

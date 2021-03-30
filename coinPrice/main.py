@@ -1,6 +1,6 @@
 import sys
 
-sys.path.insert(0, "C:/Users/Golu/Desktop/Stuff/Personal")
+sys.path.insert(0, "C:/Users/Golu/OneDrive - Unai Ltd/Desktop/Stuff/Personal")
 import config
 
 print(config.API_KEY)
@@ -16,29 +16,28 @@ from coinPrice.collection import (
 
 # Variables
 client = Client(config.API_KEY, config.API_SECRET)  # , tld='us')
-dateFrom = unix_timestamp_to_date("08 Mar, 2021")
+dateFrom = unix_timestamp_to_date("5 March, 2021")
 dateTo = dateTomorrow()
 print("Date from unix_timestamp_to_date() " + dateFrom)
 
 
 # functionality body
-candlesticks = client.get_historical_klines(
-    "XRPUSDT", Client.KLINE_INTERVAL_5MINUTE, dateFrom, dateTo
-)
+#candlesticks = client.get_historical_klines("XRPUSDT", Client.KLINE_INTERVAL_1DAY, dateFrom, dateTo)
+candlesticks = client.get_historical_klines("XRPUSDT", Client.KLINE_INTERVAL_5MINUTE, dateFrom, dateTo)
 # json_message = json.loads(candles)
 # pprint.pprint(json_message)
 
 for candlestick in candlesticks:
 
     codd_id = insert_data(candlestick)
-    print(
-        candlestick[0] / 1000,
-        candlestick[1],
-        candlestick[2],
-        candlestick[3],
-        candlestick[4],
-        candlestick[5],
-    )
+    # print(
+    #     candlestick[0] / 1000,
+    #     candlestick[1],
+    #     candlestick[2],
+    #     candlestick[3],
+    #     candlestick[4],
+    #     candlestick[5],
+    # )
     # print(candlestick)
 
 # candle_data = dedupe_stuff()
