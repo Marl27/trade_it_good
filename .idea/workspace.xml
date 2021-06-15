@@ -14,18 +14,41 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/coinPrice/collection.py" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/coinPrice/main.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/coinPrice/key_level_finder.py" root0="SKIP_HIGHLIGHTING" />
+  </component>
   <component name="ProjectId" id="1lTvJ8eqgZTfUmYasFRgfUFhI2M" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Python" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/venv/Scripts" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.cerebro">
-    <configuration name="bot" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\himal\Desktop\trading_bot\trade_it_good" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.backtest">
+    <configuration name="backtest" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="trade_it_good" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -33,11 +56,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/coinPrice" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/backTrader" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/coinPrice/bot.py" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/backTrader/backtest.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -46,7 +70,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="cerebro" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="candle_stick_chart" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="trade_it_good" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -58,7 +82,8 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/coinPrice/cerebro.py" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/coinPrice/candle_stick_chart.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -79,6 +104,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/coinPrice/collection.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -88,7 +114,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="db_utils" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="key_level_finder" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="trade_it_good" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -100,7 +126,8 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="C:\Users\himal\Desktop\trading_bot\trade_it_good\coinPrice\db_utils.py" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\Golu\Desktop\Stuff\Personal\trade_it_good\coinPrice\key_level_finder.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -109,7 +136,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="trade_it_good" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -121,7 +148,8 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/coinPrice/test.py" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/coinPrice/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -130,19 +158,45 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="pytest in tests" type="tests" factoryName="py.test" nameIsGenerated="true">
+      <module name="trade_it_good" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="C:\Python\Python39\python.exe" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;tests&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.main" />
+      <item itemvalue="Python.candle_stick_chart" />
+      <item itemvalue="Python.backtest" />
+      <item itemvalue="Python.key_level_finder" />
+      <item itemvalue="Python.collection" />
+      <item itemvalue="Python tests.pytest in tests" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.cerebro" />
-        <item itemvalue="Python.test" />
+        <item itemvalue="Python.backtest" />
+        <item itemvalue="Python.candle_stick_chart" />
+        <item itemvalue="Python.main" />
         <item itemvalue="Python.collection" />
-        <item itemvalue="Python.db_utils" />
-        <item itemvalue="Python.bot" />
+        <item itemvalue="Python.key_level_finder" />
       </list>
     </recent_temporary>
   </component>
   <component name="ServiceViewManager">
     <option name="showServicesTree" value="false" />
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -153,72 +207,43 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1607633820713</updated>
+      <workItem from="1614902946197" duration="6578000" />
+      <workItem from="1615310100269" duration="10210000" />
+      <workItem from="1615335923753" duration="6199000" />
+      <workItem from="1615471447333" duration="29446000" />
+      <workItem from="1615508124677" duration="38645000" />
+      <workItem from="1615617751199" duration="23575000" />
+      <workItem from="1616621972459" duration="1028000" />
+      <workItem from="1616668438445" duration="27000" />
+      <workItem from="1616687941167" duration="59526000" />
+      <workItem from="1617040155105" duration="17669000" />
+      <workItem from="1617105932588" duration="4756000" />
     </task>
     <servers />
   </component>
-  <component name="WindowStateProjectService">
-    <state x="2368" y="167" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1607671025992">
-      <screen x="1920" y="0" width="1366" height="728" />
-    </state>
-    <state x="2368" y="167" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824/1920.0.1366.728@1920.0.1366.728" timestamp="1607671025992" />
-    <state width="1515" height="176" key="GridCell.Tab.0.bottom" timestamp="1608457243830">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1515" height="236" key="GridCell.Tab.0.bottom/0.0.1536.824/-1366.199.1366.728@0.0.1536.824" timestamp="1608399903037" />
-    <state width="1513" height="239" key="GridCell.Tab.0.bottom/0.0.1536.824/-1366.305.1366.728@0.0.1536.824" timestamp="1607781675757" />
-    <state width="1513" height="181" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1607769162246" />
-    <state width="1343" height="174" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1366.728@1920.0.1366.728" timestamp="1607764492080" />
-    <state width="1515" height="176" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.190.1366.728@0.0.1536.824" timestamp="1608457243830" />
-    <state width="1515" height="256" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.303.1366.728@0.0.1536.824" timestamp="1608385608764" />
-    <state width="1513" height="181" key="GridCell.Tab.0.bottom/0.0.1536.824/265.-768.1366.728@0.0.1536.824" timestamp="1607772736400" />
-    <state width="1515" height="497" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1608222460411" />
-    <state width="1515" height="176" key="GridCell.Tab.0.center" timestamp="1608457243830">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1515" height="236" key="GridCell.Tab.0.center/0.0.1536.824/-1366.199.1366.728@0.0.1536.824" timestamp="1608399903037" />
-    <state width="1513" height="239" key="GridCell.Tab.0.center/0.0.1536.824/-1366.305.1366.728@0.0.1536.824" timestamp="1607781675757" />
-    <state width="1513" height="181" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1607769162246" />
-    <state width="1343" height="174" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1366.728@1920.0.1366.728" timestamp="1607764492080" />
-    <state width="1515" height="176" key="GridCell.Tab.0.center/0.0.1536.824/1920.190.1366.728@0.0.1536.824" timestamp="1608457243830" />
-    <state width="1515" height="256" key="GridCell.Tab.0.center/0.0.1536.824/1920.303.1366.728@0.0.1536.824" timestamp="1608385608764" />
-    <state width="1513" height="181" key="GridCell.Tab.0.center/0.0.1536.824/265.-768.1366.728@0.0.1536.824" timestamp="1607772736392" />
-    <state width="1515" height="497" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1608222460411" />
-    <state width="1515" height="176" key="GridCell.Tab.0.left" timestamp="1608457243830">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1515" height="236" key="GridCell.Tab.0.left/0.0.1536.824/-1366.199.1366.728@0.0.1536.824" timestamp="1608399903037" />
-    <state width="1513" height="239" key="GridCell.Tab.0.left/0.0.1536.824/-1366.305.1366.728@0.0.1536.824" timestamp="1607781675757" />
-    <state width="1513" height="181" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1607769162246" />
-    <state width="1343" height="174" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1366.728@1920.0.1366.728" timestamp="1607764492080" />
-    <state width="1515" height="176" key="GridCell.Tab.0.left/0.0.1536.824/1920.190.1366.728@0.0.1536.824" timestamp="1608457243830" />
-    <state width="1515" height="256" key="GridCell.Tab.0.left/0.0.1536.824/1920.303.1366.728@0.0.1536.824" timestamp="1608385608763" />
-    <state width="1513" height="181" key="GridCell.Tab.0.left/0.0.1536.824/265.-768.1366.728@0.0.1536.824" timestamp="1607772736392" />
-    <state width="1515" height="497" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1608222460411" />
-    <state width="1515" height="176" key="GridCell.Tab.0.right" timestamp="1608457243830">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1515" height="236" key="GridCell.Tab.0.right/0.0.1536.824/-1366.199.1366.728@0.0.1536.824" timestamp="1608399903037" />
-    <state width="1513" height="239" key="GridCell.Tab.0.right/0.0.1536.824/-1366.305.1366.728@0.0.1536.824" timestamp="1607781675757" />
-    <state width="1513" height="181" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1607769162246" />
-    <state width="1343" height="174" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1366.728@1920.0.1366.728" timestamp="1607764492080" />
-    <state width="1515" height="176" key="GridCell.Tab.0.right/0.0.1536.824/1920.190.1366.728@0.0.1536.824" timestamp="1608457243830" />
-    <state width="1515" height="256" key="GridCell.Tab.0.right/0.0.1536.824/1920.303.1366.728@0.0.1536.824" timestamp="1608385608764" />
-    <state width="1513" height="181" key="GridCell.Tab.0.right/0.0.1536.824/265.-768.1366.728@0.0.1536.824" timestamp="1607772736392" />
-    <state width="1515" height="497" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1608222460411" />
-    <state x="275" y="12" key="SettingsEditor" timestamp="1608371134369">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="276" y="54" key="SettingsEditor/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1607634042130" />
-    <state x="2165" y="11" key="SettingsEditor/0.0.1536.824/1920.0.1366.728@1920.0.1366.728" timestamp="1607635322497" />
-    <state x="275" y="12" key="SettingsEditor/0.0.1536.824/1920.303.1366.728@0.0.1536.824" timestamp="1608371134369" />
-    <state x="275" y="12" key="SettingsEditor/0.0.1536.824/265.-768.1366.728@0.0.1536.824" timestamp="1607769495683" />
-    <state x="477" y="240" key="com.intellij.ide.util.TipDialog" timestamp="1608221556871">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="477" y="240" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1608221556871" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1607753075919">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1607753075919" />
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/trade_it_good$collection.coverage" NAME="collection Coverage Results" MODIFIED="1617059561155" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/coinPrice" />
+    <SUITE FILE_PATH="coverage/trade_it_good$main.coverage" NAME="main Coverage Results" MODIFIED="1617107373626" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/coinPrice" />
+    <SUITE FILE_PATH="coverage/trade_it_good$cerebro.coverage" NAME="cerebro Coverage Results" MODIFIED="1615340367518" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/coinPrice" />
+    <SUITE FILE_PATH="coverage/trade_it_good$key_level_finder.coverage" NAME="key_level_finder Coverage Results" MODIFIED="1616919671084" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/coinPrice" />
+    <SUITE FILE_PATH="coverage/trade_it_good$candle_stick_chart.coverage" NAME="candle_stick_chart Coverage Results" MODIFIED="1617110778596" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/coinPrice" />
+    <SUITE FILE_PATH="coverage/trade_it_good$strategies.coverage" NAME="strategies Coverage Results" MODIFIED="1615614580490" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backTrader" />
+    <SUITE FILE_PATH="coverage/trade_it_good$backtest.coverage" NAME="backtest Coverage Results" MODIFIED="1617110885173" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backTrader" />
+    <SUITE FILE_PATH="coverage/trade_it_good$backtest__1_.coverage" NAME="backtest (1) Coverage Results" MODIFIED="1615614416468" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backTrader" />
   </component>
 </project>
