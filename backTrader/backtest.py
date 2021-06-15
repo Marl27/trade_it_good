@@ -1,5 +1,6 @@
 import backtrader as bt
 import datetime
+
 # from strategies import TestStrategy
 from key_level_strategy import Key_level_strategy
 import pandas as pd
@@ -19,17 +20,20 @@ cerebro.broker.setcash(200.0)
 #     todate=datetime.datetime(2000, 12, 31),
 #     reverse=False)
 
-df = pd.read_sql("""
+df = pd.read_sql(
+    """
             SELECT open_time, open, high, low, close, volume
                 FROM xrp_5_minutes_deduped 
                 ORDER BY 1 -- DESC 
                 --LIMIT 15000
-                """, conn)  # , index_col=['open_time'] , parse_dates=['open_time']
+                """,
+    conn,
+)  # , index_col=['open_time'] , parse_dates=['open_time']
 
 # df["open_time"] = pd.to_datetime(df["open_time"])
 # df.set_index('open_time', inplace=True)
 df["open_time"] = pd.to_datetime(df["open_time"])
-df.set_index('open_time', inplace=True)
+df.set_index("open_time", inplace=True)
 df = df.astype(float)
 
 # print(df)
@@ -46,10 +50,10 @@ cerebro.addstrategy(Key_level_strategy)
 # strats = cerebro.optstrategy(Key_level_strategy, num_opening_bars=[15, 30, 60])
 
 
-print('Starting Portfolio Value: %.2f' % cerebro.broker.getvalue())
+print("Starting Portfolio Value: %.2f" % cerebro.broker.getvalue())
 
 cerebro.run()
 
-print('Final Portfolio Value: %.2f' % cerebro.broker.getvalue())
+print("Final Portfolio Value: %.2f" % cerebro.broker.getvalue())
 
 cerebro.plot(style="candle")

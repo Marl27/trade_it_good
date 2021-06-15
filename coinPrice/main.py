@@ -1,9 +1,11 @@
 import sys
 
-sys.path.insert(0, "C:/Users/Golu/OneDrive - Unai Ltd/Desktop/Stuff/Personal")
+# sys.path.insert(0, "C:/Users/Golu/OneDrive - Unai Ltd/Desktop/Stuff/Personal")
+sys.path.insert(0, "/home/golu/Desktop/Github")
 import config
 
 print(config.API_KEY)
+
 
 from binance.client import Client
 from coinPrice.collection import (
@@ -16,14 +18,16 @@ from coinPrice.collection import (
 
 # Variables
 client = Client(config.API_KEY, config.API_SECRET)  # , tld='us')
-dateFrom = unix_timestamp_to_date("5 March, 2021")
+dateFrom = unix_timestamp_to_date("7 June, 2021")
 dateTo = dateTomorrow()
 print("Date from unix_timestamp_to_date() " + dateFrom)
 
 
 # functionality body
-#candlesticks = client.get_historical_klines("XRPUSDT", Client.KLINE_INTERVAL_1DAY, dateFrom, dateTo)
-candlesticks = client.get_historical_klines("XRPUSDT", Client.KLINE_INTERVAL_5MINUTE, dateFrom, dateTo)
+# candlesticks = client.get_historical_klines("XRPUSDT", Client.KLINE_INTERVAL_1DAY, dateFrom, dateTo)
+candlesticks = client.get_historical_klines(
+    "XRPUSDT", Client.KLINE_INTERVAL_15MINUTE, dateFrom, dateTo
+)
 # json_message = json.loads(candles)
 # pprint.pprint(json_message)
 

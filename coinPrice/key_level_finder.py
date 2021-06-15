@@ -105,9 +105,8 @@ def splitted_ranges_in_list_of_tuple(rsl):
         # print("inside LOOP: " + str(splitted_ranges_list_of_tuple))
         i += 1
     # print("outside LOOP: " + str(splitted_ranges_list_of_tuple))
-    #print(splitted_ranges_list_of_tuple)
+    # print(splitted_ranges_list_of_tuple)
     return splitted_ranges_list_of_tuple
-
 
 
 # '''

@@ -14,7 +14,7 @@ df = pd.read_sql(
     """     WITH CTE AS (SELECT open_time, open, high, low, close, volume
                 FROM xrp_5_minutes_deduped 
                 ORDER BY 1 DESC
-                --LIMIT 600
+                LIMIT 700
                 ) 
               SELECT open_time, open, high, low, close, volume
                 FROM CTE 
@@ -23,7 +23,7 @@ df = pd.read_sql(
     conn,
 )
 df["open_time"] = pd.to_datetime(df["open_time"])
-df.set_index('open_time', inplace=True)
+df.set_index("open_time", inplace=True)
 df = df.astype(float)
 print(df)
 
@@ -40,34 +40,38 @@ df2 = pd.read_sql(
         WHERE average_of_start_stop < cpg.current_price
             AND kl.high_count > (SELECT AVG(high_count) FROM high_key_levels)  --(average count of high_count from high_key_levels)
             ORDER BY  kl.high_count DESC, kl.price_range_start DESC 
-            --LIMIT 5
+            LIMIT 10
             """,
     conn,
 )
 print(df2)
 key_levels = df2.loc[:, "average_of_start_stop"]
-#key = []
+# key = []
 keys = [round(x, 5) for x in key_levels.sort_values()]
 
-#for x in key_levels.sort_values():
+# for x in key_levels.sort_values():
 #    key.append(round(x, 5))
-#print(keys)
+# print(keys)
 
 
-mpf.plot(df,
-         figratio=(30, 15),
-         hlines=dict(hlines=keys,
-                     # colors=['g', 'r'],
-                     linestyle='-.'),
-         type='candle', style='charles',
-         title='S&P 500, Nov 2019',
-         ylabel='Price ($)',
-         ylabel_lower='Shares \nTraded',
-         volume=True,
-         # mav=(3, 6, 9),
-         figscale=1.5,
-         # tight_layout=True
-         )  # ,
+mpf.plot(
+    df,
+    figratio=(30, 15),
+    hlines=dict(
+        hlines=keys,
+        # colors=['g', 'r'],
+        linestyle="-.",
+    ),
+    type="candle",
+    style="charles",
+    title="XRPUSD",
+    ylabel="Price ($)",
+    ylabel_lower="Shares \nTraded",
+    volume=True,
+    # mav=(3, 6, 9),
+    figscale=1.5,
+    # tight_layout=True
+)  # ,
 # savefig='test-mplfiance.png')
 
 # mpf.plot(ohlc, hlines=dict(hlines=[0.50422,0.49982],colors=['g','r'],linestyle='-.'))

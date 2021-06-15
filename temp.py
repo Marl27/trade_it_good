@@ -1,7 +1,7 @@
 from typing import List
 
 
-def range_splitter(h:int, l:int)->List[int]:
+def range_splitter(h: int, l: int) -> List[int]:
     """
     range_splitter(HIGH_RANGE, LOW_RANGE)
     defining 50 intervarls between high and low price
@@ -29,5 +29,6 @@ def range_splitter(h:int, l:int)->List[int]:
     # # print(range_splitter_list)
     # # splitted_ranges_in_list_of_tuple(range_splitter_list)
     # return range_splitter_list
+
 
 range_splitter(12.3, 5.98776)
