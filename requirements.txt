@@ -9,6 +9,6 @@ mpl_finance==0.10.1 #
 pandas==1.2.3 #
 websocket-client~=0.57.0
 mplfinance~=0.12.7a17
-matplotlib~=3.4.2
+matplotlib~=3.2.2
 backtrader~=1.9.76.123
 black==19.10b0

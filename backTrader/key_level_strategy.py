@@ -1,7 +1,9 @@
-import config
-import backtrader, pandas as pd
-from datetime import date, datetime, time, timedelta
-from coinPrice.key_level_finder import range_identification, conn
+from datetime import datetime, timedelta
+
+import backtrader
+import pandas as pd
+
+from coinPrice.key_level_finder import conn
 
 
 class Key_level_strategy(backtrader.Strategy):
@@ -135,20 +137,20 @@ class Key_level_strategy(backtrader.Strategy):
                 )  # setting bought_price value, relates to above question
                 # self.order = self.sell(exectype=backtrader.Order.Limit, price=(newlist[-1] + (0.05 * newlist[-1]))
                 #                      , valid=datetime.now() + timedelta(minutes=1))
-        #'''
+        # '''
         elif self.dataclose[0] >= round(
-            (self.bought_price + (0.05 * self.bought_price)), 5
+                (self.bought_price + (0.05 * self.bought_price)), 5
         ):  # 0.01
             # print("Profit selling {0}--{1}".format(
             # self.dataclose[0], round((bought_price + (0.005 * bought_price)), 5)))
             self.order = self.sell()
         elif self.dataclose[0] <= round(
-            (self.bought_price - (0.001 * self.bought_price)), 5
+                (self.bought_price - (0.001 * self.bought_price)), 5
         ):
             # print("Loss selling {0}--{1}".format(
             # self.dataclose[0], round((bought_price - (0.001 * bought_price)), 5)))
             self.order = self.sell()
-        #'''
+        # '''
 
     def stop(self):
         # print("5")
@@ -159,6 +161,5 @@ class Key_level_strategy(backtrader.Strategy):
 
         if self.broker.getvalue() < 200:
             self.log("*** LOSER ***")
-
 
 # cerebro.plot()
