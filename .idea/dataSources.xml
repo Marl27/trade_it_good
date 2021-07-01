@@ -8,5 +8,12 @@
       <jdbc-url>jdbc:sqlite:C:\Users\Golu\Desktop\Stuff\Personal\trade_it_good\coinPrice\database.db</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="database [2]" uuid="2c9d1347-5156-4f69-a7b0-1fb4f7b726d0">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/coinPrice/database.db</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>

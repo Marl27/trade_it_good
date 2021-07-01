@@ -2,10 +2,12 @@ import backtrader as bt
 import datetime
 
 # from strategies import TestStrategy
-from key_level_strategy import Key_level_strategy
+
 import pandas as pd
 import matplotlib.dates as mpl_dates
 import mplfinance as mpf
+
+from key_level_strategy import Key_level_strategy
 from coinPrice.key_level_finder import range_identification, conn
 
 cerebro = bt.Cerebro()
