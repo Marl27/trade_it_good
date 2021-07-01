@@ -7,7 +7,7 @@ import pandas as pd
 import matplotlib.dates as mpl_dates
 import mplfinance as mpf
 
-from .key_level_strategy import Key_level_strategy
+from key_level_strategy import Key_level_strategy
 from coinPrice.key_level_finder import range_identification, conn
 
 cerebro = bt.Cerebro()
