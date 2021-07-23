@@ -42,7 +42,7 @@ df2 = pd.read_sql(
             --AND 
             kl.high_count > (SELECT AVG(high_count) FROM high_key_levels)  --(average count of high_count from high_key_levels)
             ORDER BY  kl.high_count DESC, kl.price_range_start DESC 
-            --LIMIT 10
+            LIMIT 10
             """,
     conn,
 )
@@ -59,11 +59,11 @@ keys = [round(x, 5) for x in key_levels.sort_values()]
 mpf.plot(
     df,
     figratio=(30, 15),
-    # hlines=dict(
-    #     hlines=keys,
-    #     # colors=['g', 'r'],
-    #     linestyle="-.",
-    # ),
+    hlines=dict(
+        hlines=keys,
+         # colors=['g', 'r'],
+         linestyle="-.",
+     ),
     type="candle",
     style="charles",
     title="XRPUSD",

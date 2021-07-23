@@ -27,7 +27,7 @@ df = pd.read_sql(
             SELECT open_time, open, high, low, close, volume
                 FROM xrp_5_minutes_deduped 
                 ORDER BY 1 -- DESC 
-                --LIMIT 15000
+                LIMIT 15000
                 """,
     conn,
 )  # , index_col=['open_time'] , parse_dates=['open_time']
@@ -58,4 +58,8 @@ cerebro.run()
 
 print("Final Portfolio Value: %.2f" % cerebro.broker.getvalue())
 
+percentage_gain = int(cerebro.broker.getvalue())
+print(percentage_gain)
+
+#uncomment to plot chart
 cerebro.plot(style="candle")
