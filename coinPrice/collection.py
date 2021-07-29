@@ -31,6 +31,11 @@ def create_table():
                     price_range_start NUMERIC(6,5) NOT NULL,
                     price_range_stop NUMERIC(6,5) NOT NULL,
                     high_count INTEGER NOT NULL);
+                
+            CREATE TABLE IF NOT EXISTS assets (
+                id INTEGER PRIMARY KEY, 
+                symbol TEXT NOT NULL UNIQUE, 
+                price TEXT NOT NULL);
                             """
         )
         print(conn.total_changes)
