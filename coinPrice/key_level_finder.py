@@ -1,4 +1,4 @@
-from coinPrice.collection import dedupe_stuff, conn, insert_data_key_levels
+from collection import dedupe_stuff, conn, insert_data_key_levels
 
 # conn = db_connect()
 
@@ -14,7 +14,7 @@ def range_identification():
                 WITH CTE AS(SELECT open_time, high, low, ((high - low)/low)*100 AS avg_len 
                     FROM xrp_5_minutes_deduped 
                     ORDER BY 1 DESC 
-                    LIMIT 600
+                    LIMIT 500
                     )
                 SELECT MAX(high),  MIN(low), AVG(high), AVG(low), AVG(avg_len)
                 , (SELECT close  

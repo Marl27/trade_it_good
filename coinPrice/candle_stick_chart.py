@@ -14,7 +14,7 @@ df = pd.read_sql(
     """     WITH CTE AS (SELECT open_time, open, high, low, close, volume
                 FROM xrp_5_minutes_deduped 
                 ORDER BY 1 DESC
-                LIMIT 700
+                LIMIT 500
                 ) 
               SELECT open_time, open, high, low, close, volume
                 FROM CTE 
@@ -42,7 +42,7 @@ df2 = pd.read_sql(
             --AND 
             kl.high_count > (SELECT AVG(high_count) FROM high_key_levels)  --(average count of high_count from high_key_levels)
             ORDER BY  kl.high_count DESC, kl.price_range_start DESC 
-            LIMIT 10
+            LIMIT 50
             """,
     conn,
 )
@@ -50,7 +50,7 @@ print(df2)
 key_levels = df2.loc[:, "average_of_start_stop"]
 # key = []
 keys = [round(x, 5) for x in key_levels.sort_values()]
-
+print('keys', keys)
 # for x in key_levels.sort_values():
 #    key.append(round(x, 5))
 # print(keys)
@@ -73,7 +73,7 @@ mpf.plot(
     # mav=(3, 6, 9),
     figscale=1.5,
     # tight_layout=True
-)  # ,
-# savefig='test-mplfiance.png')
+  # ,
+    savefig='test-mplfiance.png')
 
 # mpf.plot(ohlc, hlines=dict(hlines=[0.50422,0.49982],colors=['g','r'],linestyle='-.'))

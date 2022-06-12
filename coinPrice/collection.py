@@ -1,5 +1,5 @@
 # import sqlite3
-from coinPrice.db_utils import db_connect
+from db_utils import db_connect
 from datetime import datetime, timedelta
 
 conn = db_connect()
